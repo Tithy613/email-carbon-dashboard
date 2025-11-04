@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Email Carbon Calculator",
+  "version": "1.0",
+  "description": "Calculate energy & CO2 footprint of Gmail usage",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+}
