@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Email Carbon Dashboard</title>
+  <style>
+    body { font-family: Arial; margin: 15px; }
+    h2 { color: #34a853; }
+    .charts { display: flex; gap: 20px; flex-wrap: wrap; }
+    canvas { background: #f9f9f9; border: 1px solid #ddd; padding: 10px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h2>🌿 Email Carbon Dashboard</h2>
+
+  <div class="charts">
+    <div>
+      <h3>Email Type Distribution</h3>
+      <canvas id="pieChart" width="600" height="600"></canvas>
+    </div>
+    <div>
+      <h3>Emails per Day</h3>
+      <canvas id="barChart" width="600" height="600"></canvas>
+    </div>
+    <div>
+  <h3>Top 10 Senders</h3>
+  <canvas id="topSendersChart" width="600" height="400"></canvas>
+</div>
+<div>
+  <h3>Daily Email Carbon Impact</h3>
+  <canvas id="impactChart" width="600" height="400"></canvas>
+</div>
+
+
+    <div id="suggestion"
+     style="margin-top:20px; font-weight:bold; font-size:14px; color:#2b7a0b;">
+</div>
+
+  </div>
+
+  <!-- Chart.js -->
+  <script src="chart.umd.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

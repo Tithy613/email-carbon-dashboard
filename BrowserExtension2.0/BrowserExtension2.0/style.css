@@ -1,0 +1,101 @@
+  /* Root colors */
+    :root {
+      --green: #34a853;
+      --green-dark: #2e9249;
+      --green-light: #e8f5e9;
+      --red: #F44336;
+      --blue: #2196F3;
+      --orange: #FF9800;
+      --text-dark: #222;
+      --text-muted: #666;
+      --bg: #f5f7f9;
+      --card-bg: #ffffff;
+      --border-radius: 10px;
+      --padding: 12px;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-dark);
+      margin: 0;
+      padding: 15px;
+      width: 300px;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--green-dark);
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 8px 16px;
+      margin: 5px 0;
+      background: var(--green);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    button:hover { background: var(--green-dark); }
+
+    /* Stats grid */
+    #summary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .result-item {
+      background-color: var(--card-bg);
+      border-radius: var(--border-radius);
+      padding: var(--padding);
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .result-item .label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+
+    .result-item .value {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--text-dark);
+    }
+
+    .result-item.inbox { border-top: 4px solid var(--green); }
+    .result-item.sent { border-top: 4px solid var(--green-dark); }
+    .result-item.total { border-top: 4px solid var(--blue); }
+    .result-item.energy { border-top: 4px solid var(--orange); }
+    .result-item.co2 { border-top: 4px solid var(--red); }
+
+    small {
+      display: block;
+      text-align: center;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+    .result-item.last-update {
+  grid-column: span 1; /* spans full width */
+  border-top: 4px solid var(--text-muted);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.result-item.last-update .label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+.result-item.last-update .value {
+  font-size: 14px;
+  font-weight: normal;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Email Carbon Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>🌿 Email Carbon Tracker</h2>
+  <button id="fetch">Fetch Gmail Data</button>
+  <div id="summary">
+  <div class="result-item inbox">
+    <div class="label">Inbox</div>
+    <div class="value" id="inbox">0</div>
+  </div>
+  <div class="result-item sent">
+    <div class="label">Sent</div>
+    <div class="value" id="sent">0</div>
+  </div>
+  <div class="result-item total">
+    <div class="label">Total Emails</div>
+    <div class="value" id="total">0</div>
+  </div>
+  <div class="result-item co2">
+    <div class="label">CO₂ Emissions</div>
+    <div class="value" id="co2">0 kg</div>
+  </div>
+  <div class="result-item energy">
+    <div class="label">Energy Used</div>
+    <div class="value" id="energy">0 kWh</div>
+  </div>
+
+  <!-- Last updated box -->
+  <div class="result-item last-update">
+    <div class="label"></div>
+    <div class="value" id="lastUpdated">-</div>
+  </div>
+</div>
+  <button id="dashboard">Dashboard</button>
+
+
+
+  <script src="popup.js"></script>
+</body>
+</html>
