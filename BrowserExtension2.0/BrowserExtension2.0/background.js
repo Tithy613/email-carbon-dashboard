@@ -1,7 +1,7 @@
 // background.js
 
 chrome.runtime.onInstalled.addListener(() => {
-  console.log("🌿 Email Carbon Calculator installed!");
+  console.log(" Email Carbon Calculator installed!");
 });
 
 // Get OAuth token
@@ -47,7 +47,7 @@ async function fetchAllEmails(label) {
 
   } while (pageToken);
 
-  console.log(`✅ Total ${allMessages.length} messages fetched for label ${label}`);
+  console.log(`Total ${allMessages.length} messages fetched for label ${label}`);
   return allMessages;
 }
 
@@ -65,7 +65,7 @@ async function fetchMessageDetails(msgs) {
       const msgData = await msgResp.json();
 
       if (!msgData.payload || !msgData.payload.headers) {
-        console.warn(`⚠️ Skipping message ${msg.id}: payload or headers missing`);
+        console.warn(` Skipping message ${msg.id}: payload or headers missing`);
         continue;
       }
 
@@ -82,7 +82,7 @@ async function fetchMessageDetails(msgs) {
       });
 
     } catch (err) {
-      console.error("❌ Error fetching message:", err);
+      console.error(" Error fetching message:", err);
     }
   }
 
@@ -105,11 +105,11 @@ async function fetchEmails() {
       gmailData: allMsgs,
       stats: { totalEmails: allMsgs.length, timestamp: new Date().toISOString() }
     }, () => {
-      console.log("✅ All emails fetched and saved to local storage");
+      console.log(" All emails fetched and saved to local storage");
     });
 
   } catch (err) {
-    console.error("❌ Error fetching emails:", err);
+    console.error("Error fetching emails:", err);
   }
 }
 

@@ -27,7 +27,7 @@ function safeExtractGmailCounts() {
       chrome.storage.local.set({ inboxCount, sentCount, total: inboxCount + sentCount });
     }
   } catch (err) {
-    console.warn("⚠️ Gmail DOM extraction failed (ignored):", err);
+    console.warn(" Gmail DOM extraction failed (ignored):", err);
   }
 }
 
@@ -40,7 +40,7 @@ try {
   observer = new MutationObserver(safeExtractGmailCounts);
   observer.observe(document.body, { childList: true, subtree: true });
 } catch (err) {
-  console.warn("⚠️ Gmail MutationObserver failed:", err);
+  console.warn(" Gmail MutationObserver failed:", err);
 }
 
 // SPA-safe interval for fallback counting (every 10 seconds)
@@ -48,5 +48,5 @@ let interval;
 try {
   interval = setInterval(safeExtractGmailCounts, 10000);
 } catch (err) {
-  console.warn("⚠️ Gmail interval failed:", err);
+  console.warn("Gmail interval failed:", err);
 }

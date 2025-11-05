@@ -5,19 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         emails = JSON.parse(emails);
       } catch (err) {
-        console.error("❌ Failed to parse gmailData:", err);
+        console.error("Failed to parse gmailData:", err);
         return;
       }
     }
 
     if (!emails.length) {
-      console.warn("⚠️ No emails found in local storage");
+      console.warn(" No emails found in local storage");
       document.getElementById("suggestion").textContent =
         "No email data found. Please fetch your Gmail data first.";
       return;
     }
 
-    /* ---------- 📊 PIE CHART: Inbox vs Sent ---------- */
+    /* ----------  PIE CHART: Inbox vs Sent ---------- */
     const typeCounts = emails.reduce(
       (acc, e) => {
         acc[e.type] = (acc[e.type] || 0) + 1;
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    /* ---------- 📈 LINE CHART: Inbox vs Sent per Day ---------- */
+    /* ----------  LINE CHART: Inbox vs Sent per Day ---------- */
     const inboxCounts = {};
     const sentCounts = {};
 
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       },
     });
-    /* ---------- 📬 TOP SENDERS / RECEIVERS ---------- */
+    /* ---------- TOP SENDERS / RECEIVERS ---------- */
 const senderCounts = {};
 emails.forEach(e => {
   if (e.type === "Inbox") {
@@ -157,7 +157,7 @@ new Chart(document.getElementById("topSendersChart"), {
   },
 });
 
-    /* ---------- 🌍 CO₂ & ENERGY USAGE OVER TIME ---------- */
+    /* ---------- CO₂ & ENERGY USAGE OVER TIME ---------- */
     const dailyEmails = {};
     emails.forEach(e => {
       const day = new Date(e.date).toLocaleDateString("en-CA");
@@ -214,7 +214,7 @@ new Chart(document.getElementById("topSendersChart"), {
       },
     });
 
-    /* ---------- 🌿 ECO SUGGESTION SYSTEM ---------- */
+    /* ----------  ECO SUGGESTION SYSTEM ---------- */
     const totalEmails = emails.length;
     const co2 = totalEmails * 0.004; // kg CO2
     const energy = totalEmails * 0.0003; // kWh

@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
           emails = JSON.parse(emails);
         } catch (err) {
-          console.error("❌ Failed to parse gmailData JSON:", err);
+          console.error(" Failed to parse gmailData JSON:", err);
           emails = [];
         }
       }
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function resetData() {
-    console.log("🕛 Resetting Gmail data at 23:59...");
+    console.log(" Resetting Gmail data at 23:59...");
     chrome.storage.local.set({
       gmailData: "[]",
       inboxCount: 0,
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lastReset: new Date().toISOString()
     }, () => {
       loadStats();
-      console.log("✅ Gmail stats reset complete.");
+      console.log(" Gmail stats reset complete.");
     });
   }
 
